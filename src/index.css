@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1a1a1a;
+  background-color: #f5f5f7;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #e0e0e0;
+}
+
+.hud-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.hud-header {
+  border-left: 2px solid #ff0000;
+  padding-left: 20px;
+}
+
+.hud-header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #000;
+}
+
+.hud-header p {
+  margin: 5px 0 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.hud-footer {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.instruction-box {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.5);
+  min-width: 250px;
+}
+
+.instruction-box strong {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: #ff0000;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.instruction-box p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #333;
+}
+
+/* Effetto Scanline leggerissimo */
+.hud-overlay::before {
+  content: " ";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.02) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.01));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
